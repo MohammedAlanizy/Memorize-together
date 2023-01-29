@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JavaScript Crossword</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="crossword.js"></script>
+  <script type="text/javascript" src="cell.js"></script>
+  <script type="text/javascript">
+  var crossword_grid;
+  $(document).ready(function() {
+    crossword_grid = new crossword();
+    crossword_grid.init('c1');
+
+    window.onresize = function(event) {
+      crossword_grid.resizeCells();
+    }
+  });
+</script>
+<noscript>Please enable JavaScript!</noscript>
+</head>
+
+<body>
+  <div class="crossword-start">
+  </div>
+</body>
+</html>

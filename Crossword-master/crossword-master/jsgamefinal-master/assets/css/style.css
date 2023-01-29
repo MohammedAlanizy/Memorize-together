@@ -1,0 +1,163 @@
+*{
+	margin: 0 0;
+	padding: 0 0;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 45px;
+	font-style: italic;
+}
+
+button {
+	margin-left: 500px;
+	height: 30px;
+	width: 130px;
+}
+
+#check {
+	margin-left: 600px;
+}
+
+#show{
+	margin-left: 10px;
+}
+
+#score {
+	font-size: 20px;
+	font-style: italic;
+	/*margin-left: 900px*/
+}
+
+#scores {
+	font-size: 20px;
+	font-style: italic;
+	display: none;
+	margin-left: 1px;
+}
+
+#times{
+	font-size: 20px;
+	font-style: italic;
+	display: inline-block;
+	/*margin-left: 900px*/
+}
+#time {
+	color: red;
+}
+
+
+table {
+	border: 1px solid black;
+	table-layout: fixed;
+}
+
+td {
+	border: 1px solid #ddd;
+	text-align: center;
+	color: black;
+	width: 10px;
+	height: 10px;
+	padding: 0 0;
+}
+
+tr {
+	border: 1px #ddd;
+	text-align: center;
+	width: 10px;
+	height: 5px;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+.table td, .table th {
+	padding: 0 0;
+}
+
+
+.blackTile{
+	background-color: #313639;/*offblack*/
+	width: 10px;
+	height: 10px;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+.whiteTile {
+	background-color: white;
+	width: 10px;
+	height: 10px;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+.whiteTilenum {
+	background-color: white;
+	width: 10px;
+	height: 10px;
+	padding: 0 0;
+	margin: 0 0;
+	/*padding-right: 15px;*/
+	/*padding-bottom: 15px;*/
+}
+.whiteTileInput {
+	width: 10px;
+	border-style: none;
+	margin: 0 0;
+	/*border-collapse: collapse;*/
+	border: none;
+	border-color: transparent;
+	text-transform: uppercase;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+.whiteTilenumInput {
+	width: 10px;
+	border-style: none;
+	/*border-collapse: collapse;*/
+	border: none;
+	border-color: transparent;
+	text-transform: uppercase;
+	padding: 0 0;
+	margin: 0 0;
+}
+.blackTilenumInput {
+	background-color: #313639;
+	width: 10px;
+	border-style: none;
+	/*border-collapse: collapse;*/
+	border: none;
+	border-color: transparent;
+	text-transform: uppercase;
+	padding: 0 0;
+	margin: 0 0;
+}
+
+.num{
+	font-size: 10px;
+	padding: 0 0;
+	margin: 0 0;
+	float: left;
+	float: top; 
+}
+/*.crosswordtb {
+	border: 1px solid black;
+}*/
+
+.cluescontainer {
+	margin-right: 180px;
+	margin-left: 50px;
+}
+.clues {
+	margin-top: 20px
+	/*margin-bottom: 10px*/
+}
+
+span {
+	display: block;
+	font-size: 14px;
+}
+
+/*font-family: 'Open Sans', sans-serif;
+font-family: 'Merriweather', serif;*/

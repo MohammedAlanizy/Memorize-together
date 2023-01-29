@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>UI PlayGround</title>
+  </head>
+  <body>
+    <div id="target"></div>
+    <script>
+      window.addEventListener("load", () => {
+        crossword(
+          [
+            { index: "1", top: 0, left: 0, word: "K_V_N", direction: "down" },
+            { index: "2", top: 1, left: 1, word: "_L_CE", direction: "right" }
+          ],
+          [
+            { index: "1", top: 3, left: 0 },
+            { index: "2", top: 1, left: 1 }
+          ]
+        );
+      });
+    </script>
+    <script src="/scripts/crossword.js"></script>
+    <script src="/reload/reload.js"></script>
+  </body>
+</html>

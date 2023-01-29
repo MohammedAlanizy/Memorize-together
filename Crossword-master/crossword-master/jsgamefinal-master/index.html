@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Game - Crossword</title>
+	<!-- bootstrap, jQuery -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"></script>
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
+
+	<!-- crossword source -->
+	<!-- https://wordmint.com/puzzles/1460341 -->
+
+
+</head>
+<body>
+<!-- <body onload="startTime()"> -->
+
+	
+	<h1 class="mx-5 mt-3">Greek Mythology 
+		<button id="check" class="btn btn-outline-secondary">Check answer</button>
+		<button id="show" class="btn btn-outline-secondary">Show answer</button>
+	</h1>
+	
+
+	<section class="row mx-0 my-0">
+		
+		<div class="container-fluid col-12 col-md-4 col-lg-4 mt-5">
+			<table class="table table-striped table-bordered-black table-dark mt-5">
+				<!-- table-responsive{-sm|-md|-lg|-xl} -->
+				<tr id ="tr1">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">1</span><input type="text" id ="a1" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">2</span><input type="text" id ="a2"class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr2">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">3</span><input type="text" id="a3" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a4" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a5" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a6" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a7" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a8" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a9" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a10" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a11" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a12" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr3">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a13" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a14" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr4">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">4</span><input type="text" id="a15" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a16" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a17" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a18" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a19" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a20" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a21" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr5">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">5</span><input type="text" id="a22" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a23" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr6">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a24" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">6</span><input type="text" id="a25" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a26" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a27" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a28" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a29" class="whiteTileInput" maxlength = "1"></td>
+				</tr>
+				<tr id="tr7">
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">7</span><input type="text" id="a30" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a31" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">8</span><input type="text" id="a32" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">9</span><input type="text" id="a33"class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a34" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr8">
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a35" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a36" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a37" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a38" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a39" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr9">
+					<td class="whiteTilenum"><span class="num">10</span><input type="text" id="a40" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a41" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a42" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a43" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a44" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a45" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">11</span><input type="text" id="a46" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">12</span><input type="text" id="a47" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a48" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a49" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a50" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr10">
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a51" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a52" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a53" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a54" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a55" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr11">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">13</span><input type="text" id="a56" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a57" class="whiteTileInput a57" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a58" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a59" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a60" class="whiteTileInput a60" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a61" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a62" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a63" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr12">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a64" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a65" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a66" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr13">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a67" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a68" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTile"><input type="text" id="a69" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr14">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">14</span><input type="text" id="a70" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a71" class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a72" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a73" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a74" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a75" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a76" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a77" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a78" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a79" class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a80" class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr15">
+					<td class="blackTile"><input disabled class="blackTilenumInput"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+				<tr id="tr16">
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="whiteTilenum"><span class="num">15</span><input type="text" id="a81"class="whiteTilenumInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a82"class="whiteTileInput borderless" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a83"class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a84"class="whiteTileInput" maxlength = "1"></td>
+					<td class="whiteTile"><input type="text" id="a85"class="whiteTileInput" maxlength = "1"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+					<td class="blackTile"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="container-fluid cluescontainer col-12 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 mt-3">
+			<div id="score">Score: <p id="scores">score</p></div>
+			<div id="times">Left time: <div><span id="time"></span></div></div>
+			
+			<!-- <div id="time">Left time: <div><p id="txt"></p></div></div> -->
+		
+
+			
+			<p class="clues">Across</p>
+			<span>3. God of blacksmiths and fire</span>
+			<span>4. Messenger for the Gods and God of travel</span>
+			<span>6. Everything he touched turned gold</span>
+			<span>10. The king of the gods father</span>
+			<span>12. God of war and fighting</span>
+			<span>13. Half man and Half bull</span>
+			<span>14. A box full of everything bad</span>
+			<span>15. Tricked into ruling the underworld</span>
+
+			<p class="clues">Down</p>
+			<span>1. God of the sky</span>
+			<span>2. Home of the Gods</span>
+			<span>5. Goddess of wisdom</span>
+			<span>7. Goddess of Marriage, Mothers and Families</span>
+			<span>8. God of the sea</span>
+			<span>9. Performed 12 labors</span>
+			<span>11. God of archery, music, poetry, prophecy, and medicine</span>
+		</div>
+
+	</section>
+
+	<!-- answer, time count down, click link to hint, header pick -->
+
+	<!-- javascript -->
+	<script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+</html>

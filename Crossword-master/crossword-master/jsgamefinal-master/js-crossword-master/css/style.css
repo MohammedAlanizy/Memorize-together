@@ -1,0 +1,88 @@
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+body {
+  font-family: "system";
+}
+.grid {
+  display: inline-block;
+}
+.box {
+  color: black;
+  display: inline-block;
+  border: 1px solid black;
+}
+.white-box {
+  background-color: white;
+  position: relative;
+}
+.black-box {
+  background-color: black;
+
+}
+.letter {
+  font-size: 1em;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  /* Internet Explorer 10 */
+  display:-ms-flexbox;
+  -ms-flex-pack:center;
+  -ms-flex-align:center;
+
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+.number {
+  padding-left: 2px;
+  font-weight: 800;
+  font-size: 10px;
+  position: absolute;
+  white-space: normal;
+}
+#cell-active {
+  border: 1px solid red;
+}
+
+.clues {
+  margin-left: 20px;
+  position:absolute;
+  display:inline-block;
+}
+.clues .across, .clues .down {
+  background-color: #eee;
+  margin:4px;
+}
+.clues h4 {
+  font-size: 12px;
+  margin: 0;
+}
+.clues div {
+  padding: 4px;
+  overflow: auto;
+}
+.clues p {
+  font-size: 12px;
+  margin: 0;
+  cursor: default;
+  position: relative;
+}
